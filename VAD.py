@@ -57,9 +57,9 @@ if __name__ == '__main__':
     plt.ylabel('entropy')
     plt.show()
     flags = [0.5 if tags[t] else -0.5 for t in range(len(tags))]
-    plt.plot(range(nframes),flags,'r',label='VAD')
-    plt.plot(range(nframes),wav_data,'b',label='Signal')
-    plt.xlabel('time')
+    plt.plot(np.array(range(nframes))/framerate,flags,'r',label='VAD')
+    plt.plot(np.array(range(nframes))/framerate,wav_data,'b',label='Signal')
+    plt.xlabel('time/s')
     plt.ylabel('signal-data')
     f0 =wave.open('myD_1000373.wav','wb')
     plt.legend(prop={'size':10})
